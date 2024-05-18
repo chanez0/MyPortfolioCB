@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Personal portfolio website</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" sizes="32x32" href="favicon_io/favicon-32x32.png" type="image/png">
+        <link rel="icon" sizes="16x16" href="favicon_io/favicon-16x16.png" type="image/png">
+        <link rel="icon" href="favicon_io/favicon.ico" type="image/x-icon">
+        <link rel="manifest" href="favicon_io/site.webmanifest">
+        <script src="https://kit.fontawesome.com/835e5d424d.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+     <div id="header">
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#Contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-text">
+                <p>Computer science student</p>
+                <h1>Hi, I'm <span>Chanez</span><br>from Algeria.</h1>
+                <p>Nice to meet you. </p>
+            </div>
+        </div>
+     </div>
+
+     <!-------about-------->
+
+
+        <div id="about">
+            <div class="container">
+               <div class="row">
+                 <div class="about-col-1">
+                    <img src="">
+                 </div>
+                    <div class="about-col-2">
+                     <h1 class="sub-title">About Me</h1>
+                     <p>It hasn't been long since I have dived into the world of computer Science, but this field has not yet stopped amazing me. This site is my first project. </p>
+
+                        <div class="tab-titles">
+                         <p class="tab-links active-link" onclick="opentab('Skills')">Skills</p>
+                         <p class="tab-links" onclick="opentab('Experience')">Experience</p>
+                         <p class="tab-links" onclick="opentab('Hobbies')">Hobbies</p>
+                        </div>
+                        <div class="tab-contents active-tab" id="Skills">
+                            <ul>
+                                <li><span>Fast Learner</span><br>I love to take on challenges and work through them.</li>
+                                <li><span>Languages</span><br>English, French: Bilingual<br>Arabic: Fluent </li>
+                                <li><span>Programmer tools</span><br>VsCode, Github </li>
+                                <li><span>Frameworks</span><br>Bootstraps</li>
+                                <li><span>Programming languages</span><br>HTML, CSS, JavaScript, C</li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="Experience">
+                            <ul>
+                                <li><span>Club Member</span><br>I'm an active club member of scientific club Micro Club at USTHB since december 2022. I am currently part of the robotics section, and part of the content writing team of the communication department.</li>
+                                <li><span>Ideathon</span><br>I have participated in the ideathon hosted by MicroClub in early 2023</li>
+                                <li><span>Datathon Participant</span><br>Thanks to my experience as a participant in the datathon hosted by MicroClub, I was able to aquire knowledge in the field of Data science and analysis.</li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="Hobbies">
+                            <ul>
+                                <li><span>Reading</span><br>Reading has always been one of my hobbies since little, my favorite genres being thrillers and dystopian worlds.</li>
+                                <li><span>learning</span><br>I am naturally curious and like to learn new things about how our world works.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<!-----------Portfolio---------->
+
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">My portfolio</h1>
+        <div class="portfolio-list">
+            <div>
+                <i class="fa-solid fa-code"></i>
+                <h2>Web development (coming soon)</h2>
+                <p>Description here.</p>
+                <a href="#"onclick="window.location.href='about:blank'; return false;">Learn more</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-palette"></i>
+                <h2>Data Analysis (coming soon)</h2>
+                <p>Description here.</p>
+                <a href="#"onclick="window.location.href='about:blank'; return false;">Learn more</a>
+            </div>
+        </div>
+    </div>
+ </div>
+
+<!--------------contact---------->
+        <div id="Contact">
+            <div class="container"> 
+                <div class="contactme">
+                    <h1 class="sub-title">Contact me</h1>
+                    <p><i class="fa-regular fa-envelope"></i> chanezbelfadel@gmail.com</p>
+                    <p><i class="fa-solid fa-phone"></i> </p>
+                </div> 
+                <div class="social-icons">
+                 <a href="https://www.instagram.com"><i class="fa-brands fa-instagram"></i></a>
+                 <a href="https://www.facebook.com"><i class="fa-brands fa-facebook"></i></a>
+                 <a href="https://twitter.com"><i class="fa-brands fa-twitter"></i></a>
+                 <a href="https://www.linkedin.com/in/chanez-belfadel-42b75524b"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <script>
+
+            var tablinks = document.getElementsByClassName("tab-links")
+            var tabcontents = document.getElementsByClassName("tab-contents")
+            function opentab(tabname){
+                for(tablink of tablinks){
+                    tablink.classList.remove("active-link");
+                }
+                for(tabcontent of tabcontents){
+                    tabcontent.classList.remove("active-tab");
+                }
+                event.currentTarget.classList.add("active-link");
+                document.getElementById(tabname).classList.add("active-tab");
+
+
+            }
+     <!--for navigator links------>
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+         </script>
+    </body>
+
+</html>
